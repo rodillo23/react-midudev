@@ -1,14 +1,7 @@
-import React, {useEffect, useState} from 'react'
-import { getGifs } from '../services/getGifs';
+import React from 'react'
 import { Gif } from './Gif';
 
-export const ListOfGifs = ({keyword}) => {
-  
-  const [gifs, setGifs] = useState([])
-
-  useEffect(()=>{
-    getGifs(keyword).then(gifs => setGifs(gifs))  
-  }, [keyword])
+export const ListOfGifs = ({gifs}) => {
 
   return (
     <>

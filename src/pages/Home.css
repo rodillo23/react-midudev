@@ -13,3 +13,14 @@
 .popular-gifs li{
   list-style: none;
 }
+
+input[type='text']{
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+  background-color: #dedede;
+}
+
+input[type='text']:focus{
+  outline: none;
+}
