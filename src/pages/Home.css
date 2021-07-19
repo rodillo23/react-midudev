@@ -1,0 +1,15 @@
+.popular-gifs{
+  display: flex;
+  flex-direction: column;
+}
+.popular-gifs a{
+  color: black;
+}
+
+.popular-gifs ul{
+  padding: 0;
+}
+
+.popular-gifs li{
+  list-style: none;
+}

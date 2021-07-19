@@ -9,7 +9,11 @@ function App() {
   return (
     <div className="App">
       <section className="App-content">
-        <Link to="/"><img src="logo-giffy.png" alt=""/></Link>
+        
+        <Link to="/">
+          <img src="logo-giffy.png" alt=""/>
+        </Link>
+        
         <Route component={Home} path="/"/>        
         <Route component={SearchResults} path="/search/:keyword"/>
         <Route component={Details} path="gif/:id"/>

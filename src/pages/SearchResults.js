@@ -1,9 +1,12 @@
 import React from 'react'
+import { ListOfGifs } from '../components/ListOfGifs'
 
-export const SearchResults = () => {
+export const SearchResults = ({params}) => {
+  console.log(params.keyword);
   return (
-    <div>
-      
-    </div>
+    <>
+      <ListOfGifs keyword={params.keyword}/>
+    </>
   )
+
 }
