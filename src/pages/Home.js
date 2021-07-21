@@ -25,7 +25,7 @@ export const Home = () => {
     })
   }, [keyword])*/
 
-  const {loading, gifs} = useGetGifs({keyword:'android'})
+  const {loading, gifs} = useGetGifs()
 
 ///////////////////////////////////////////////////////
   const handleChange = e =>{

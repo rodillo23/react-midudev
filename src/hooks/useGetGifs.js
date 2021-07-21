@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getGifs } from '../services/getGifs'
 
-export const useGetGifs = ({keyword}) => {
+export const useGetGifs = ({keyword}={keyword:null}) => {
   
   const [gifs, setGifs] = useState([])
   const [loading, setLoading] = useState(false)
-
+  
   useEffect(()=>{
     setLoading(true)
-    getGifs(keyword).then(gifs => {
+    const keywordToUse = keyword || localStorage.getItem('lastKeyword') || 'panda'
+    
+    getGifs(keywordToUse).then(gifs => {
+      localStorage.setItem('lastKeyword', keywordToUse)
       setGifs(gifs)
       setLoading(false)
     })

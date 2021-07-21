@@ -5,7 +5,7 @@ import './Gifs.css'
 export const Gif = ({url, title, id}) => {
   return (
     <Link to={`gif/${id}`} className="card">
-      <img src={url} width="300" alt={title}/>
+      <img loading='lazy' src={url} width="300" alt={title}/>
       <p>{title}</p>
     </Link>
   )

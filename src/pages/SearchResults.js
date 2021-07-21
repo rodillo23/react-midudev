@@ -20,6 +20,7 @@ export const SearchResults = ({params}) => {
  */
 
   const {gifs, loading} = useGetGifs({keyword})
+  console.log('-');
   return (
     <>
       {
