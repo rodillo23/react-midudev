@@ -3,7 +3,9 @@ import {Link} from 'wouter'
 import useLocation from 'wouter/use-location'
 import { ListOfGifs } from '../components/ListOfGifs'
 import { Loading } from '../components/Loading'
+import { TrendingSearches } from '../components/TrendingSearches'
 import { useGetGifs } from '../hooks/useGetGifs'
+import { getTrending } from '../services/getTrending'
 import './Home.css'
 
 const pupulares = ['Game of Thrones', 'Vikingos', 'Narcos', 'Walking Dead', 'Breaking bad']
@@ -37,6 +39,8 @@ export const Home = () => {
     pushLocation(`/search/${keyword}`)
   }
 
+  getTrending()
+
   return (
     <div className="popular-gifs"> 
       
@@ -53,18 +57,7 @@ export const Home = () => {
             <ListOfGifs gifs={gifs}/>
       }
 
-      <h3>Los gifs mas populares</h3>
-      <ul>
-        {
-          pupulares.map (popular => {
-            return (
-              <li key={popular}>
-                <Link href={`/search/${popular}`}>Gifs de {popular}</Link>
-              </li>
-            ) 
-          })
-        }
-      </ul>
+      <TrendingSearches/>
 
       
     </div>
